@@ -56,6 +56,7 @@ const argv = yargs
 			const RoamPrivateApi = require( '../' );
 			const api = new RoamPrivateApi( argv.graph, argv.email, argv.password, {
 				headless: ! argv.debug,
+				args: [ '--no-sandbox', '--disable-setuid-sandbox' ],
 			} );
 
             api.logIn()
@@ -74,6 +75,7 @@ const argv = yargs
 			const RoamPrivateApi = require( '../' );
 			const api = new RoamPrivateApi( argv.graph, argv.email, argv.password, {
 				headless: ! argv.debug,
+				args: [ '--no-sandbox', '--disable-setuid-sandbox' ],
 			} );
 
             api.logIn()
@@ -109,6 +111,7 @@ const argv = yargs
 			const RoamPrivateApi = require( '../' );
 			const api = new RoamPrivateApi( argv.graph, argv.email, argv.password, {
 				headless: ! argv.debug,
+				args: [ '--no-sandbox', '--disable-setuid-sandbox' ],
 			} );
 
 			if ( ! argv['parentuid'] ) {
@@ -128,7 +131,8 @@ const argv = yargs
 			const RoamPrivateApi = require( '../' );
 			const api = new RoamPrivateApi( argv.graph, argv.email, argv.password, {
 				headless: ! argv.debug,
-				folder: argv['dir']
+				folder: argv['dir'],
+				args: [ '--no-sandbox', '--disable-setuid-sandbox' ],
 			} );
 			let promises = api.getExportData( argv['removezip'] );
 			promises.then( data => console.log( 'Downloaded' ) );
